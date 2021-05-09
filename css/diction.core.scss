@@ -1,0 +1,127 @@
+.mc-d-container {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  color: #4a4a4a;
+}
+.mc-d-editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.mc-d-container .mc-d-element {
+  display: flex;
+  flex: 1;
+  border-radius: 0.15rem;
+  align-items: center;
+}
+.mc-d-container .mc-d-element > .mc-d-input {
+  display: flex;
+  flex: 1;
+  white-space: pre-wrap;
+  outline: none !important;
+  border: none !important;
+  transition: color 0.075s ease-in-out, background-color 0.075s ease-in-out, border-color 0.075s ease-in-out, box-shadow 0.075s ease-in-out;
+  padding: 0.25rem;
+  margin: 0;
+  color: inherit;
+}
+.mc-d-container .mc-d-element:hover > .mc-d-input {
+  background-color: #fafafa;
+}
+.mc-d-container .mc-d-element.mc-d-active > .mc-d-input {
+  background-color: #f7f8fc;
+}
+.mc-d-container .mc-d-element.mc-d-active .mc-d-grabber,
+.mc-d-container .mc-d-element:hover .mc-d-grabber {
+  opacity: 1;
+}
+.mc-d-container .mc-d-element .mc-d-grabber {
+  display: flex;
+  position: relative;
+  color: #858585;
+  margin-left: 0.5rem;
+  cursor: grab;
+  opacity: 0;
+  transition: opacity 0.075s;
+}
+.mc-d-grabber > .mc-d-grabber-dropdown {
+  color: #4a4a4a;
+  position: absolute;
+  width: 180px;
+  background: white;
+  border: 1px solid #e6e6e6;
+  right: 25px;
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  animation-timing-function: linear;
+  animation: __slideInUp 0.2s forwards;
+}
+.mc-d-grabber > .mc-d-grabber-dropdown .mc-d-option {
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+  margin: 2px 0;
+  transition: color 0.075s ease-in-out, background-color 0.1s ease-in-out, border-color 0.075s ease-in-out, box-shadow 0.075s ease-in-out;
+}
+.mc-d-grabber > .mc-d-grabber-dropdown .mc-d-option:hover {
+  background-color: #f1f1f1;
+}
+.mc-d-grabber > .mc-d-grabber-dropdown .mc-d-option.mc-d-danger {
+  color: #f12c3f;
+}
+.mc-d-grabber > .mc-d-grabber-dropdown .mc-d-option:hover.mc-d-danger {
+  background-color: #f12c3f;
+  color: #ffffff;
+}
+@keyframes __slideInUp {
+  0% {
+    top: 3px;
+    opacity: 0.5;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+.mc-d-element.mc-d-h1 {
+  margin: 0.75rem 0;
+}
+.mc-d-element.mc-d-p {
+  margin: 0.5rem 0;
+}
+.mc-d-element.mc-d-h1 > .mc-d-input {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.mc-d-element.mc-d-h1 > [contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa;
+}
+.mc-d-container .mc-d-button {
+  display: flex;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: #eeeeee;
+  border: 1px solid transparent;
+  padding: 0.175rem 0.55rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  outline: none !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.mc-d-container .mc-d-button:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+.mc-d-footer {
+  margin: 1rem 0;
+}

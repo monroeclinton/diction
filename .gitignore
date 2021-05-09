@@ -1,0 +1,11 @@
+# IDE
+.idea
+
+# Mac
+.DS_Store
+
+# JS
+/node_modules/
+
+# Prod
+/dist/
