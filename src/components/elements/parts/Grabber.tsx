@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
-import OutsideClickHandler from 'react-outside-click-handler';
 import GrabberIcon from '../../../../assets/icons/grip-vertical.svg';
 
 import { ElementType, IElement } from '../Elements';
 
 import { useAppActions } from '../../context/reducer';
 import { handleEnterKey } from '../../hooks/onEnterKey';
+import { onOutsideClick } from '../../hooks/onOutsideClick';
 
 interface IProps {
   element: IElement,
@@ -26,6 +26,8 @@ enum NewPosition {
 
 function Grabber(props: IProps) {
   const { createElement, deleteElement, updateElement } = useAppActions();
+
+  const ref = useRef<HTMLDivElement>(null);
 
   const [dropdown, setDropdown] = useState<boolean>(false);
 
@@ -58,27 +60,26 @@ function Grabber(props: IProps) {
     createElement(ElementType.PARAGRAPH, elPos);
   }
 
-  function onOutsideClick() {
+  onOutsideClick(ref, () => {
     if (dropdown) {
       setDropdown(false);
       setMenu(Menu.MAIN);
       props.setActive(false);
     }
-  }
+  });
 
   return (
-    <OutsideClickHandler onOutsideClick={onOutsideClick}>
-      <div className="mc-d-grabber">
-        <div
-          role="button"
-          tabIndex={0}
-          className="mc-d-grabber-icon"
-          onClick={handleClick}
-          onKeyDown={handleEnterKey(handleClick)}
-        >
-          <GrabberIcon height={16} />
-        </div>
-        {
+    <div className="mc-d-grabber" ref={ref}>
+      <div
+        role="button"
+        tabIndex={0}
+        className="mc-d-grabber-icon"
+        onClick={handleClick}
+        onKeyDown={handleEnterKey(handleClick)}
+      >
+        <GrabberIcon height={16} />
+      </div>
+      {
           dropdown
           && (
             <div className="mc-d-grabber-dropdown">
@@ -178,8 +179,7 @@ function Grabber(props: IProps) {
             </div>
           )
         }
-      </div>
-    </OutsideClickHandler>
+    </div>
   );
 }
 
