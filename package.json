@@ -1,16 +1,14 @@
 {
   "name": "@monroeclinton/diction",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "bugs": {
     "url": "https://github.com/monroeclinton/diction/issues"
   },
   "author": "Monroe Clinton",
   "description": "Notion like text editor.",
   "main": "dist/diction.js",
-  "types": "dist/diction.d.ts",
   "files": [
-    "dist/diction.core.css",
-    "dist/diction.js"
+    "dist"
   ],
   "scripts": {
     "build": "webpack --config webpack.config.js",
