@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 
 import GrabberIcon from '../../../../assets/icons/grip-vertical.svg';
 
-import { ElementType, IElement } from '../Elements';
+import { ElementType, IElement } from '../Element';
 
 import { useAppActions } from '../../context/reducer';
 import { handleEnterKey } from '../../hooks/onEnterKey';

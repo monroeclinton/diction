@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
-import Element from './elements/Element';
-import { ElementType } from './elements/Elements';
+import Element, { ElementType } from './elements/Element';
 
 import { useAppActions, useAppState } from './context/reducer';
 

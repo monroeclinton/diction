@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 import { AppProvider } from './context/reducer';
 import { ProviderHandles } from './context/types';
-import { ElementType, IElement } from './elements/Elements';
+import { ElementType, IElement } from './elements/Element';
 
 type IProps = {
   diction: Diction,

@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import { ElementType, IElement } from '../elements/Elements';
+import { ElementType, IElement } from '../elements/Element';
 
 import createActions from './actions';
 import {

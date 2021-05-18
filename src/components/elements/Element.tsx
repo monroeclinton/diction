@@ -3,12 +3,24 @@ import React, {
 } from 'react';
 import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
 
-import { ElementType, IElement } from './Elements';
 import Grabber from './parts/Grabber';
 
 import { useAppActions, useAppState } from '../context/reducer';
 import { handleEnterKey } from '../hooks/onEnterKey';
 import strip from '../utils/strip';
+
+export const enum ElementType {
+  TITLE = 'h1',
+  SUBTITLE = 'h3',
+  PARAGRAPH = 'p',
+}
+
+export interface IElement {
+  id: string,
+  type: ElementType,
+  position: number,
+  text: string,
+}
 
 interface IProps {
   element: IElement,

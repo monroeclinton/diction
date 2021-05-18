@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
 
-import { ElementType, IElement } from './components/elements/Elements';
+import { ElementType, IElement } from './components/elements/Element';
 
 import Editor from './components/Editor';
-import Options from './options';
+import { Options } from './options';
 
-export interface DictionOptions {
+interface IOptions {
   maxElements?: number,
   maxLength?: {
     title?: number,
@@ -17,12 +17,12 @@ export interface DictionOptions {
   beforeCreate?: (el: IElement) => Promise<IElement>,
 }
 
-export default class Diction extends EventEmitter {
+class Diction extends EventEmitter {
     public options: Options = new Options();
 
     private editor: null | Editor = null;
 
-    constructor(containerId: HTMLDivElement | string, options?: DictionOptions) {
+    constructor(containerId: HTMLDivElement | string, options?: IOptions) {
       super();
 
       this.parseConfig(containerId, options);
@@ -42,7 +42,7 @@ export default class Diction extends EventEmitter {
       );
     }
 
-    private parseConfig(containerId: HTMLDivElement | string, options?: DictionOptions) {
+    private parseConfig(containerId: HTMLDivElement | string, options?: IOptions) {
       const dictionOptions = new Options();
 
       dictionOptions.setContainer(containerId);
@@ -96,3 +96,8 @@ export default class Diction extends EventEmitter {
       return doc.outerHTML;
     }
 }
+
+export {
+  Diction, IOptions, Options, ElementType, IElement,
+};
+export default Diction;

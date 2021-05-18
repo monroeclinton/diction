@@ -10,7 +10,7 @@ import {
 
 import Diction from '../../diction';
 import Logger from '../../logger';
-import { IElement, ElementType } from '../elements/Elements';
+import { IElement, ElementType } from '../elements/Element';
 
 function createActions(
   dispatch: Dispatch<AppAction>,

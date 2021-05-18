@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAppActions, useAppState } from './context/reducer';
-import { ElementType } from './elements/Elements';
+import { ElementType } from './elements/Element';
 
 interface IProps {
   maxElements?: number,

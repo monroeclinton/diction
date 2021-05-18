@@ -1,5 +1,5 @@
 import Diction from '../../diction';
-import { ElementType, IElement } from '../elements/Elements';
+import { ElementType, IElement } from '../elements/Element';
 
 // Constants
 export const UPDATE_ELEMENTS = 'UPDATE_ELEMENTS';

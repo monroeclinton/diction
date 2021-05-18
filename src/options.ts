@@ -1,6 +1,6 @@
-import { IElement } from './components/elements/Elements';
+import { IElement } from './components/elements/Element';
 
-export default class DictionOptions {
+export class Options {
   /**
    * Container of editor
    *
