@@ -1,15 +1,15 @@
-# diction
+# editor
 A text editor based on Notion.
 
 # Installation
 ```
-npm i @monroeclinton/diction
+npm i @monroeclinton/editor
 ```
 
 # Usage
 Create new editor:
 ```js
-const diction = new Diction("#editor", {
+const editor = new Diction("#editor", {
   maxElements?: number,
   maxLength?: {
     title?: number,
@@ -22,11 +22,11 @@ const diction = new Diction("#editor", {
 
 Listen for events:
 ```js
-diction.on('change', (el) => {
+editor.on('change', (el) => {
   
 })
 
-diction.on('delete', (id) => {
+editor.on('delete', (id) => {
 
 })
 ```
@@ -34,19 +34,19 @@ diction.on('delete', (id) => {
 Editor method:
 ```js
 // Create element by ElementType and position
-diction.createElement(elementType, position);
+editor.createElement(elementType, position);
 
 // Update element
-diction.updateElement(id, element);
+editor.updateElement(id, element);
 
 // Delete element by ID
-diction.deleteElement(id);
+editor.deleteElement(id);
 
 // IElement[]
-diction.getElements();
+editor.getElements();
 
 // Return HTML of content
-diction.getHTML();
+editor.getHTML();
 ```
 
 An element is defined as:
@@ -67,5 +67,5 @@ enum ElementType {
 
 ## License
 
-Diction is [MIT licensed](./LICENSE).
+Editor is [MIT licensed](./LICENSE).
 
