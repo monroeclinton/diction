@@ -1,8 +1,8 @@
 {
-  "name": "@monroeclinton/diction",
+  "name": "@monroeclinton/editor",
   "version": "0.1.3",
   "bugs": {
-    "url": "https://github.com/monroeclinton/diction/issues"
+    "url": "https://github.com/monroeclinton/editor/issues"
   },
   "author": "Monroe Clinton",
   "description": "Notion like text editor.",
